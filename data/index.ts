@@ -106,9 +106,9 @@ export const projects = [
 export const testimonials = [
     {
       quote:
-        "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
+        "Mr. Shakeeb Ahmed demonstrated excellent problem-solving abilities and a strong understanding of ERP systems. He was proactive in identifying potential issues and addressing them before they escalated. His strong communication skills and teamwork were instrumental in delivering projects on time and exceeding expectations.",
+      name: "Abdulmohsen Alsalman",
+      title: "CEO of Rwasem",
     },
     {
       quote:
@@ -172,22 +172,22 @@ export const companies = [
 export const workExperience = [
     {
       id: 1,
-      title: "Frontend Engineer Intern",
-      desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+      title: "Software Engineer (Odoo)",
+      desc: "Collaborated on a variety of projects utilizing Odoo, including APIs, AI, automation, and other cutting-edge technologies.",
       className: "md:col-span-2",
       thumbnail: "/exp1.svg",
     },
     {
       id: 2,
-      title: "Mobile App Dev - JSM Tech",
-      desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+      title: "Software Engineer | Consultant",
+      desc: "Designed and developed a scalable, SaaS-based Point of Sale (POS) system tailored for the Saudi Arabian market using Odoo",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/exp2.svg",
     },
     {
       id: 3,
-      title: "Freelance App Dev Project",
-      desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+      title: "Freelance Dev Projects",
+      desc: "Led few projects, including mobile app development, tailored modules, and more.",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/exp3.svg",
     },
@@ -204,13 +204,34 @@ export const socialMedia = [
     {
       id: 1,
       img: "/git.svg",
+      link: "https://github.com/SKB336",
     },
     {
       id: 2,
       img: "/twit.svg",
+      link: "https://twitter.com/SKB336",
     },
     {
       id: 3,
       img: "/link.svg",
+      link: "https://linkedin.com/in/shakeeb-ahmed-336",
+    },
+];
+
+export const approach = [
+    {
+        id: 1,
+        title: "Planning and Foundation",
+        description: "I start by building a solid foundation, focusing on core backend architecture and essential full-stack functionality. This includes designing scalable APIs, setting up databases, and creating clean, maintainable codebases.",
+    },
+    {
+        id: 2,
+        title: "Enhancement and Optimization",
+        description: "I enhance projects by integrating advanced backend techniques and optimizing performance. This phase focuses on scalability, testing, and DevOps practices to ensure production-ready systems.",
+    },
+    {
+        id: 3,
+        title: "Amplification and Impact",
+        description: "I amplify impact by showcasing real-world results and boosting visibility. This includes quantifying performance metrics, contributing to open-source projects, and tailoring solutions for industry needs.",
     },
 ];
