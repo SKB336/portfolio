@@ -71,34 +71,34 @@ export const gridItems = [
 export const projects = [
     {
       id: 1,
-      title: "3D Solar System Planets to Explore",
-      des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-      img: "/p1.svg",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+      title: "AI Powered Resume Builder App",
+      des: "Instantly generate polished resumes with AI. Customizable, accurate, and recruiter-friendly.",
+      img: "/pc1.png",
+      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/ex.svg", "/sql.svg"],
       link: "https://github.com/SKB336/react-native/tree/main/cv-maker-v4",
     },
     {
       id: 2,
-      title: "Yoom - Video Conferencing App",
-      des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-      img: "/p2.svg",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+      title: "XFCE / Gnome Plugins",
+      des: "Enhance your Linux desktop with XFCE and GNOME plugins. Improve productivity effortlessly.",
+      img: "/pc3.png",
+      iconLists: ["/js.svg", "/python.svg", "/ubuntu.svg", "/xfce.svg"],
       link: "https://github.com/SKB336/work-timer",
     },
     {
       id: 3,
-      title: "AI Image SaaS - Canva Application",
-      des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-      img: "/p3.svg",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-      link: "",
+      title: "Personal Portfolio Website",
+      des: "A sleek developer portfolio built with Next.js, Tailwind, and Framer Motion. Fully responsive, animated, and open source.",
+      img: "/pc5.jpg",
+      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/fm.svg", "/next.svg"],
+      link: "https://github.com/SKB336/portfolio",
     },
     {
       id: 4,
-      title: "Animated Apple Iphone 3D Website",
-      des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-      img: "/p4.svg",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+      title: "2D Pixel RPG Game",
+      des: "Built a classic 2D RPG using Godot Engine. Features vector-based movement, combat, and quest mechanics.",
+      img: "/pc6.jpg",
+      iconLists: ["/python.svg", "/godot.svg"],
       link: "",
     },
 ];
@@ -108,30 +108,35 @@ export const testimonials = [
       quote:
         "Mr. Shakeeb Ahmed demonstrated excellent problem-solving abilities and a strong understanding of ERP systems. He was proactive in identifying potential issues and addressing them before they escalated. His strong communication skills and teamwork were instrumental in delivering projects on time and exceeding expectations.",
       name: "Abdulmohsen Alsalman",
+      profile: "/profile2.jpeg",
       title: "CEO of Rwasem",
     },
     {
       quote:
         "Mr. Shakeeb Ahmed demonstrated excellent problem-solving abilities and a strong understanding of ERP systems. He was proactive in identifying potential issues and addressing them before they escalated. His strong communication skills and teamwork were instrumental in delivering projects on time and exceeding expectations.",
       name: "Abdulmohsen Alsalman",
+      profile: "/profile2.jpeg",
       title: "CEO of Rwasem",
     },
     {
       quote:
         "Mr. Shakeeb Ahmed demonstrated excellent problem-solving abilities and a strong understanding of ERP systems. He was proactive in identifying potential issues and addressing them before they escalated. His strong communication skills and teamwork were instrumental in delivering projects on time and exceeding expectations.",
       name: "Abdulmohsen Alsalman",
+      profile: "/profile2.jpeg",
       title: "CEO of Rwasem",
     },
     {
       quote:
         "Mr. Shakeeb Ahmed demonstrated excellent problem-solving abilities and a strong understanding of ERP systems. He was proactive in identifying potential issues and addressing them before they escalated. His strong communication skills and teamwork were instrumental in delivering projects on time and exceeding expectations.",
       name: "Abdulmohsen Alsalman",
+      profile: "/profile2.jpeg",
       title: "CEO of Rwasem",
     },
     {
       quote:
         "Mr. Shakeeb Ahmed demonstrated excellent problem-solving abilities and a strong understanding of ERP systems. He was proactive in identifying potential issues and addressing them before they escalated. His strong communication skills and teamwork were instrumental in delivering projects on time and exceeding expectations.",
       name: "Abdulmohsen Alsalman",
+      profile: "/profile2.jpeg",
       title: "CEO of Rwasem",
     },
 ];
@@ -172,7 +177,7 @@ export const companies = [
 export const workExperience = [
     {
       id: 1,
-      title: "Software Engineer (Odoo)",
+      title: "Software Engineer",
       desc: "Collaborated on a variety of projects utilizing Odoo, including APIs, AI, automation, and other cutting-edge technologies.",
       className: "md:col-span-2",
       thumbnail: "/exp1.svg",
@@ -184,20 +189,20 @@ export const workExperience = [
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/exp2.svg",
     },
-    {
-      id: 3,
-      title: "Freelance Dev Projects",
-      desc: "Led few projects, including mobile app development, tailored modules, and more.",
-      className: "md:col-span-2", // change to md:col-span-2
-      thumbnail: "/exp3.svg",
-    },
-    {
-      id: 4,
-      title: "Lead Frontend Developer",
-      desc: "Developed and maintained user-facing features using modern frontend technologies.",
-      className: "md:col-span-2",
-      thumbnail: "/exp4.svg",
-    },
+    // {
+    //   id: 3,
+    //   title: "Freelance Dev Projects",
+    //   desc: "Led few projects, including mobile app development, tailored modules, and more.",
+    //   className: "md:col-span-2", // change to md:col-span-2
+    //   thumbnail: "/exp3.svg",
+    // },
+    // {
+    //   id: 4,
+    //   title: "Lead Frontend Developer",
+    //   desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    //   className: "md:col-span-2",
+    //   thumbnail: "/exp4.svg",
+    // },
 ];
   
 export const socialMedia = [
@@ -208,12 +213,12 @@ export const socialMedia = [
     },
     {
       id: 2,
-      img: "/twit.svg",
+      img: "/link.svg",
       link: "https://twitter.com/SKB336",
     },
     {
       id: 3,
-      img: "/link.svg",
+      img: "/insta.svg",
       link: "https://linkedin.com/in/shakeeb-ahmed-336",
     },
 ];

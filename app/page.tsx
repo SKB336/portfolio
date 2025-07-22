@@ -9,6 +9,7 @@ import Clients from "@/components/Clients";
 import Experience from "@/components/Experience";
 import Approach from "@/components/Approach";
 import Footer from "@/components/Footer";
+import FixedElements from "@/components/FixedElements";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       mx-auto sm:px-10 px-5 overflow-clip"
     >
       <div className="max-w-7xl w-full">
+        {/* <FixedElements /> */}
         <FloatingNav navItems={navItems}/>
         <Hero />
         <Grid />

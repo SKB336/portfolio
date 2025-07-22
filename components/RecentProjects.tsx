@@ -18,7 +18,7 @@ const RecentProjects = () => {
         }) => (
           <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]'>
             <PinContainer title={link} href={link}>
-              <div className='relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden lg:h-[30vh] sm:h-[40vh] h-[30vh] mb-10'>
+              {/* <div className='relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden lg:h-[30vh] sm:h-[40vh] h-[30vh] mb-10'>
                 <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]'>
                   <img src="/bg.png" alt="bg-img" />
                 </div>
@@ -27,6 +27,18 @@ const RecentProjects = () => {
                   alt={title}
                   className='z-10 absolute bottom-0'
                 />
+              </div> */}
+              <div className='relative rounded-3xl flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden lg:h-[30vh] sm:h-[40vh] h-[30vh] mb-10'>
+                <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]'>
+                  <img src="/bg.png" alt="bg-img" />
+                </div>
+                <div className='relaitve z-10 absolute bottom-0'>
+                  <img
+                    src={img}
+                    alt={title}
+                    className='object-cover'
+                    />
+                </div>
               </div>
               <h1 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>
                 {title}
@@ -49,10 +61,14 @@ const RecentProjects = () => {
                   ))}
                 </div>
                 
-                <div className='flex items-center justify-center'>
-                  <p className='flex lg:text-xl md:text-xs text-sm text-purple'>Check Live Site</p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9"/>
-                </div>
+                {link ? (
+                  <div className='flex items-center justify-center'>
+                      <p className='flex lg:text-xl md:text-xs text-sm text-purple'>Check Live Site</p>
+                      <FaLocationArrow className="ms-3" color="#CBACF9"/>
+                  </div>
+                ) : (
+                  <div />
+                )}
               </div>
             </PinContainer>
           </div>
