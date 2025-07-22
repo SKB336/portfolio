@@ -32,11 +32,11 @@ const RecentProjects = () => {
                 <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]'>
                   <img src="/bg.png" alt="bg-img" />
                 </div>
-                <div className='relaitve z-10 absolute bottom-0'>
+                <div className='z-10 absolute bottom-0 w-full h-full'>
                   <img
                     src={img}
                     alt={title}
-                    className='object-cover'
+                    className='object-cover w-full h-full'
                     />
                 </div>
               </div>
