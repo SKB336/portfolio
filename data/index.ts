@@ -74,7 +74,7 @@ export const projects = [
       title: "AI Powered Resume Builder App",
       des: "Instantly generate polished resumes with AI. Customizable, accurate, and recruiter-friendly.",
       img: "/pc1.png",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/ex.svg", "/sql.svg"],
+      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/ex.svg"],
       link: "https://github.com/SKB336/react-native/tree/main/cv-maker-v4",
     },
     {
@@ -90,7 +90,7 @@ export const projects = [
       title: "Personal Portfolio Website",
       des: "A sleek developer portfolio built with Next.js, Tailwind, and Framer Motion. Fully responsive, animated, and open source.",
       img: "/pc5.jpg",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/fm.svg", "/next.svg"],
+      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/fm.svg", "/three.svg", "/next2.svg"],
       link: "https://github.com/SKB336/portfolio",
     },
     {
@@ -143,10 +143,22 @@ export const testimonials = [
   
 export const companies = [
     {
+      id: 5,
+      name: "docker.",
+      img: "/dock.svg",
+      nameImg: "/dockerName.svg",
+    },
+    {
+      id: 4,
+      name: "NextJS",
+      img: "/next.svg",
+      nameImg: "/nextName.svg",
+    },
+    {
       id: 1,
-      name: "cloudinary",
-      img: "/cloud.svg",
-      nameImg: "/cloudName.svg",
+      name: "Supabase",
+      img: "/supabase.svg",
+      nameImg: "/supabaseName.svg",
     },
     {
       id: 2,
@@ -157,20 +169,7 @@ export const companies = [
     {
       id: 3,
       name: "HOSTINGER",
-      img: "/host.svg",
-      nameImg: "/hostName.svg",
-    },
-    {
-      id: 4,
-      name: "stream",
-      img: "/s.svg",
-      nameImg: "/streamName.svg",
-    },
-    {
-      id: 5,
-      name: "docker.",
-      img: "/dock.svg",
-      nameImg: "/dockerName.svg",
+      both: "/expoBoth.svg",
     },
 ];
   
