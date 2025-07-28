@@ -10,6 +10,8 @@ import Experience from "@/components/Experience";
 import Approach from "@/components/Approach";
 import Footer from "@/components/Footer";
 import FixedElements from "@/components/FixedElements";
+// import FloatingDock from "@/components/FloatingDockAI";
+import FloatingDockAce from "@/components/FloatingDock";
 
 export default function Home() {
   return (
@@ -27,6 +29,8 @@ export default function Home() {
         <Approach />
         <Footer />
       </div>
+
+      <FloatingDockAce />
     </main>
   );
 }
