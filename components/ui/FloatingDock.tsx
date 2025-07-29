@@ -84,7 +84,7 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-gray-50 border dark:border-white/[0.2] dark:bg-black-100 backdrop-blur-lg saturate-180 bg-opacity-75"
+        className="flex h-[51px] w-[51px] items-center justify-center rounded-full bg-gray-50 border dark:border-white/[0.2] dark:bg-black-100 backdrop-blur-lg saturate-180 bg-opacity-75"
       >
         <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-white" />
       </button>

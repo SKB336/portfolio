@@ -41,15 +41,12 @@ export default function FloatingDockAce() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Get the footer element - adjust selector based on your footer implementation
       const footer = document.querySelector('footer');
-      
       if (!footer) return;
 
       const footerRect = footer.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      // Hide dock when footer is visible (when footer top is less than window height)
       if (footerRect.top <= windowHeight) {
         setIsVisible(false);
       } else {
@@ -57,20 +54,15 @@ export default function FloatingDockAce() {
       }
     };
 
-    // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
-    
-    // Check initial state
     handleScroll();
-
-    // Cleanup
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <div 
-      className={`fixed bottom-0 left-0 md:left-1/2 md:-translate-x-1/2 mx-0 md:mx-auto z-50 m-4 transition-transform duration-500 ease-in-out ${
-        isVisible ? 'translate-y-0' : 'translate-y-[150%]'
+      className={`fixed -bottom-0.5 left-0 md:left-1/2 md:-translate-x-1/2 mx-0 md:mx-auto z-50 m-4 transition-transform duration-500 ease-in-out ${
+        isVisible ? 'translate-y-0' : 'md:translate-y-[150%] -translate-x-[150%]'
       }`}
     >
       <FloatingDock
