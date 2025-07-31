@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Next.js: npm run dev",
+        "runtimeExecutable": "npm", // Specify 'npm' as the executable
+        "runtimeArgs": [
+          "run",
+          "dev"
+        ], // Pass 'run' and 'dev' as arguments to npm
+        "cwd": "${workspaceFolder}", // Use workspaceFolder for clarity
+        "console": "integratedTerminal",
+        "skipFiles": [
+          "<node_internals>/**",
+          "${workspaceFolder}/node_modules/**"
+        ]
+      }
+    ]
+}
