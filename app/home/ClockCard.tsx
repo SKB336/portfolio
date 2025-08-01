@@ -12,7 +12,7 @@ export default function ClockCard() {
     }, []);
   
     return (
-      <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-2 md:p-6 text-center">
+      <div className="bg-slate-800/30 backdrop-blur-sm border hidden md:block border-slate-700 rounded-xl p-2 md:p-6 text-center">
         {/* <h2 className="text-white text-xl font-semibold mb-4">Local Time</h2> */}
         <div className="text-sm md:text-3xl font-mono text-green-400">
           {time.toLocaleTimeString()}
