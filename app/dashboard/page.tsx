@@ -6,11 +6,13 @@ import {
   IconBrandGmail,
   IconMailFilled,
   IconGrain,
+  IconServer
 } from '@tabler/icons-react'
 import Image from 'next/image'
 
 import type { Metadata } from "next";
 import ClockCard from './ClockCard';
+import { supabase } from '@/lib/supabase';
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -75,14 +77,6 @@ const llms = [
     status: 'online',
     color: 'bg-[#14191F]',
   },
-  // {
-  //   title: 'Claude',
-  //   description: 'Chat with Claude',
-  //   href: 'https://claude.ai',
-  //   icon: IconGrain,
-  //   status: 'online',
-  //   color: 'bg-[#D97757]'
-  // },
   {
     title: 'Gemini',
     description: 'Chat with Gemini',
@@ -97,7 +91,6 @@ const llms = [
     href: 'https://claude.ai',
     icon: "/home-assets/claude.svg",
     status: 'online',
-    // color: 'bg-[#FAF9F5]',
     color: 'bg-[#D97757]',
   },
   {
@@ -120,7 +113,18 @@ const getStatusColor = (status: string) => {
   }
 }
 
-export default function Dashboard() {
+export default async function Dashboard() {
+  const { data, error } = await supabase
+  .from('websites')
+  .select('*')
+
+  if (error) {
+    console.error(error)
+    return
+  }
+
+  console.log(data)
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Header */}
@@ -237,6 +241,44 @@ export default function Dashboard() {
                     {/* <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300">
                       {item.description}
                     </p> */}
+                    
+                    {/* Hover arrow */}
+                    <div className="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Clients */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6">
+          <h2 className="text-white text-xl font-semibold mb-4">Clients</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {data.map((item, index) => {
+              return (
+                <Link key={index} target={item.href.startsWith('http') ? '_blank' : '_self'} href={item.href}>
+                  <div className="group relative bg-slate-800/50 backdrop-blur-sm hover:bg-slate-700/50 border border-slate-700 hover:border-slate-600 rounded-xl p-2 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-slate-900/20 cursor-pointer flex items-center justify-start gap-4">
+                    {/* Icon */}
+                    <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg group-hover:scale-110 transition-transform duration-200`}
+                      style={{ 
+                        backgroundColor: item.color || '',
+                        backgroundImage: item.color ? '' : `linear-gradient(to bottom right, #994683, #B8489A)`
+                      }}
+                    >
+                      <IconServer className="w-6 h-6 text-white" />
+                    </div>
+                    
+                    {/* Content */}
+                    <h3 className="text-white text-lg font-semibold group-hover:text-slate-100">
+                      {item.title}
+                    </h3>
                     
                     {/* Hover arrow */}
                     <div className="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
