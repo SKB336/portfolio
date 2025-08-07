@@ -14,6 +14,9 @@ import type { Metadata } from "next";
 import ClockCard from './ClockCard';
 import { supabase } from '@/lib/supabase';
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export const metadata: Metadata = {
   title: "Dashboard",
   description: "Dashboard with links to my services",
