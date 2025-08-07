@@ -114,11 +114,14 @@ const getStatusColor = (status: string) => {
 }
 
 export default async function Dashboard() {
+  console.log("fetching...")
   const { data, error } = await supabase
   .from('websites')
   .select('*')
 
+  console.log("fetched")
   if (error) {
+    console.log(error)
     console.error(error)
     return
   }
