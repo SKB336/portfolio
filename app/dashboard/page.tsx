@@ -64,7 +64,7 @@ const dashboardItems = [
   {
     title: 'Outlook',
     description: 'Email & contacts',
-    href: 'https://outlook.live.com',
+    href: 'https://outlook.office.com/',
     icon: IconMailFilled,
     status: 'online',
     color: 'bg-blue-500'
