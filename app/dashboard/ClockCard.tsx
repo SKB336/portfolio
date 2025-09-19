@@ -8,6 +8,17 @@ export default function ClockCard() {
     const [todayPay, setTodayPay] = useState<number>(0);
     const [showSecondary, setShowSecondary] = useState(false);
 
+    function getWorkingDaysBeforeDate(year: number, month: number, day: number): number {
+      // counts working days from 1 .. (day-1)
+      let count = 0;
+      for (let d = 1; d < day; d++) {
+        const date = new Date(year, month, d);
+        const dow = date.getDay(); // 0 = Sun, 6 = Sat
+        if (dow !== 0 && dow !== 6) count++;
+      }
+      return count;
+    }
+
     function getWorkingDaysInMonth(year: number, month: number): number {
       let count = 0;
       const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -53,7 +64,12 @@ export default function ClockCard() {
       );
     
       // Add full hours from previous days (subtract 12 days, like Python code)
-      let hours = todayHours + (currentTime.getDate() - 1) * 9;
+      // let hours = todayHours + (currentTime.getDate() - 1) * 9;
+
+      const workingDaysBeforeToday = getWorkingDaysBeforeDate(year, month, currentTime.getDate());
+
+      // total hours = full hours from previous working days + today's hours
+      const hours = Math.max(0, todayHours + workingDaysBeforeToday * 9);
     
       const rate = 120000 / numberOfWorkingDaysInMonth / 9;
       const todayPay = todayHours * rate;
