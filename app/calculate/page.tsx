@@ -69,11 +69,11 @@ const App: React.FC = () => {
         setImageSrc(null);
 
         const payload = {
-            ck_type: formData.ck_type || null,
+            ck_type: formData.ck_type || 'E',
             age: parseInt(formData.age || '0', 10),
             size: parseFloat(formData.size || '0'),
             diameter: parseFloat(formData.diameter || '0'),
-            show_type: formData.show_type || null,
+            show_type: formData.show_type || 'E',
         };
 
         console.log(payload);
