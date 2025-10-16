@@ -40,7 +40,7 @@ export default function ImageCompressor() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('http://157.173.101.184:8443/compress', {
+      const response = await fetch('https://157.173.101.184:8443/compress', {
         method: 'POST',
         body: formData,
       });
