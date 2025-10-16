@@ -4,7 +4,7 @@ import React, { useState, useCallback, ChangeEvent, FormEvent } from 'react';
 import { Download, Loader2, ArrowRight } from 'lucide-react';
 
 // Configuration
-const API_URL = 'https://157.173.101.184:8443/calculate';
+const API_URL = 'https://api.crackvault.work/calculate';
 const MAX_RETRIES = 3;
 const INITIAL_DELAY_MS = 1000;
 
