@@ -4,7 +4,7 @@ import React, { useState, useCallback, ChangeEvent, FormEvent } from 'react';
 import { Download, Loader2, ArrowRight } from 'lucide-react';
 
 // Configuration
-const API_URL = 'https://python-tools-2xfi.onrender.com/calculate';
+const API_URL = 'http://157.173.101.184:10000/calculate';
 const MAX_RETRIES = 3;
 const INITIAL_DELAY_MS = 1000;
 
