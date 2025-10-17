@@ -33,6 +33,8 @@ export default function ImageCompressor() {
   // Store the actual ZIP file blob after compression
   const [compressedZipBlob, setCompressedZipBlob] = useState<Blob | null>(null);
 
+  const [selectedMaxWidth, setSelectedMaxWidth] = useState<number>(1920);
+
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const selectedFiles = e.target.files;
     if (selectedFiles && selectedFiles.length > 0) {
@@ -80,9 +82,11 @@ export default function ImageCompressor() {
     files.forEach((file) => {
       formData.append('files', file); 
     });
+    formData.append('max_size', String(selectedMaxWidth));
 
     try {
-      const response = await fetch('https://api.crackvault.work/compress-zip', {
+      // const response = await fetch('https://api.crackvault.work/compress-zip', {
+      const response = await fetch('http://192.168.18.197:10000/compress-zip', {
         method: 'POST',
         body: formData,
       });
@@ -206,9 +210,10 @@ export default function ImageCompressor() {
             {files.length > 0 && (
               <div className="border border-gray-200 rounded-xl p-4 shadow-inner bg-gray-50">
                 <p className="text-base font-bold text-gray-700 mb-3">Selected Images ({files.length}):</p>
-                <div className="flex flex-wrap gap-4 justify-start max-h-64 overflow-y-auto p-2">
+                {/* <div className="flex flex-wrap gap-4 justify-start max-h-64 overflow-y-auto p-2"> */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-start max-h-64 overflow-y-auto p-2">
                   {files.map((file, index) => (
-                    <div key={index} className="flex flex-col items-center w-28 bg-white p-2 rounded-lg shadow-md">
+                    <div key={index} className="flex flex-col items-center w-full bg-white p-2 rounded-lg shadow-md">
                       <img
                         src={file.preview}
                         alt={`Preview ${index + 1}`}
@@ -224,6 +229,27 @@ export default function ImageCompressor() {
               </div>
             )}
 
+            <div className="flex flex-col gap-2">
+              <span className="text-sm font-semibold text-gray-700">Compression size</span>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2">
+                {[1920, 1280, 720, 480].map((size) => (
+                  <button
+                    key={size}
+                    onClick={() => setSelectedMaxWidth(size)}
+                    className={`px-3 py-1.5 rounded-lg border text-sm font-semibold transition text-center ${
+                      selectedMaxWidth === size
+                        ? 'bg-purple-700 text-white border-purple-700'
+                        : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100'
+                    }`}
+                    aria-pressed={selectedMaxWidth === size}
+                  >
+                    {size}px
+                  </button>
+                ))}
+              </div>
+            </div>
+
+
             {error && (
               <div className="bg-red-100 border border-red-400 rounded-xl p-4 flex items-center gap-3 shadow-md">
                 <XCircle className="w-6 h-6 text-red-600 flex-shrink-0" />
@@ -232,13 +258,13 @@ export default function ImageCompressor() {
             )}
 
             {success && (
-              <div className="bg-green-100 border border-green-400 rounded-xl p-4 flex items-center gap-3 shadow-md">
+              <div className="bg-green-100 border border-green-400 rounded-xl p-4 flex flex-col sm:flex-row items-center gap-3 shadow-md">
                 <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                <p className="text-green-800 font-medium">Compression successful! Ready to download {files.length} compressed files.</p>
+                <p className="text-green-800 font-medium text-center sm:text-left">Compression successful! Ready to download {files.length} compressed files.</p>
               </div>
             )}
 
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={handleCompress}
                 disabled={files.length === 0 || loading || success}
@@ -263,7 +289,7 @@ export default function ImageCompressor() {
                   {loading ? (
                     <>
                       <Loader2 className="w-6 h-6 animate-spin" />
-                      Unzipping...
+                      Downloading...
                     </>
                   ) : (
                     <>
