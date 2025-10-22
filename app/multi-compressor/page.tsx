@@ -86,7 +86,7 @@ export default function ImageCompressor() {
 
     try {
       // const response = await fetch('https://api.crackvault.work/compress-zip', {
-      const response = await fetch('http://192.168.18.197:10000/compress-zip', {
+      const response = await fetch('https://api.crackvault.work/compress-zip', {
         method: 'POST',
         body: formData,
       });

@@ -65,7 +65,7 @@ export default function ImageCompressor() {
       validUrls.forEach(url => formData.append('urls', url));
       formData.append('max_size', selectedMaxWidth.toString());
 
-      const response = await fetch('http://192.168.18.197:10000/compress-zip-url', {
+      const response = await fetch('https://api.crackvault.work/compress-zip-url', {
         method: 'POST',
         body: formData,
       });
