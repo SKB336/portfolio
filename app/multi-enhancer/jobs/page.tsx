@@ -147,11 +147,11 @@ export default function QueuePage() {
             {jobs.map((job, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-xl p-6 bg-gray-50 shadow-sm flex flex-col sm:flex-row justify-between items-center gap-4"
+                className="border border-gray-200 rounded-xl p-6 bg-gray-50 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
               >
                 <div>
                   <p className="font-semibold text-gray-800">Status: {job.status}</p>
-                  <p className="font-sm text-gray-800">Job ID: {job.id}</p>
+                  <p className="break-all md:whitespace-nowrap font-sm text-gray-800">Job ID: {job.id}</p>
                   <p className="text-sm text-gray-600">
                     Processed {job.processed_count}/{job.files_count}
                   </p>
@@ -162,34 +162,38 @@ export default function QueuePage() {
                   )}
                 </div>
 
-                <div className="flex flex-shrink-0 items-center gap-2">
-                {job.status === "In Progress" && (
-                  <div className="flex items-center gap-2 text-red-600">
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    <span>Processing</span>
-                  </div>
-                )}
+                <div className="flex flex-shrink-0 items-center gap-2 ml-auto md:ml-0">
+                  {job.status === "In Progress" && (
+                    <div className="flex items-center gap-2 text-red-600">
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <span>Processing</span>
+                    </div>
+                  )}
 
-                {job.result && (
+                  {job.result && (
+                    <button
+                      onClick={() => handleDownloadUnzipped(job.result?.split('/').pop()?.replace('.zip', '') || '')}
+                      className="flex flex-shrink-0 items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition"
+                      disabled={loading}
+                    >
+                      <Download className="w-5 h-5" />
+                      <span>
+                        <span className="hidden md:inline">Download &amp; Unzip</span>
+                        <span className="inline md:hidden">Download</span>
+                      </span>
+                    </button>
+                  )}
+
+                  {/* Delete Job button */}
+                  {job.status !== "In Progress" && (
                   <button
-                    onClick={() => handleDownloadUnzipped(job.result?.split('/').pop()?.replace('.zip', '') || '')}
-                    className="flex flex-shrink-0 items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition"
+                    onClick={() => handleDeleteJob(job.id)}
+                    className="flex flex-shrink-0 items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition disabled:opacity-50"
                     disabled={loading}
                   >
-                    <Download className="w-5 h-5" /> Download & Unzip
+                    <Trash className="w-5 h-5" />
                   </button>
-                )}
-
-                {/* Delete Job button */}
-                {job.status !== "In Progress" && (
-                <button
-                  onClick={() => handleDeleteJob(job.id)}
-                  className="flex flex-shrink-0 items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition disabled:opacity-50"
-                  disabled={loading}
-                >
-                  <Trash className="w-5 h-5" />
-                </button>
-                )}
+                  )}
                 </div>
               </div>
             ))}
