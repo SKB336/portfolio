@@ -63,7 +63,7 @@ export default function QueuePage() {
     setError(null);
 
     try {
-      const response = await fetch(`http://192.168.18.197:10000/results/${jobId}`);
+      const response = await fetch(`https://api.crackvault.work/results/${jobId}`);
       if (!response.ok) throw new Error(`Failed to download: ${response.statusText}`);
       const blob = await response.blob();
 
@@ -101,7 +101,7 @@ export default function QueuePage() {
 
     setLoading(true);
     try {
-      const response = await fetch(`http://192.168.18.197:10000/delete/${jobId}`, { method: "POST" }); 
+      const response = await fetch(`https://api.crackvault.work/delete/${jobId}`, { method: "POST" }); 
       // If you changed backend to DELETE:
       // const response = await fetch(`/delete/${jobId}`, { method: "DELETE" });
 
