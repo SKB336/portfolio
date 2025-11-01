@@ -39,7 +39,7 @@ export default function QueuePage() {
     try {
       // const response = await fetch("http://192.168.18.197:10000/jobs");
       const sessionId = localStorage.getItem("sessionId");
-      const response = await fetch("https://api.crackvault.work/jobs", {
+      const response = await fetch("https://api.crackvault.work/enhance-jobs", {
         credentials: "include",
       });
       if (!response.ok) throw new Error(`Failed to fetch jobs: ${response.statusText}`);
