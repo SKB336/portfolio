@@ -37,9 +37,9 @@ export default function QueuePage() {
   const fetchJobs = async () => {
     setError(null);
     try {
-      // const response = await fetch("http://192.168.18.197:10000/jobs");
       const sessionId = localStorage.getItem("sessionId");
-      const response = await fetch("https://api.crackvault.work/enhance-jobs", {
+      // const response = await fetch("http://localhost:10000/compress-jobs", {
+      const response = await fetch("https://api.crackvault.work/compress-jobs", {
         credentials: "include",
       });
       if (!response.ok) throw new Error(`Failed to fetch jobs: ${response.statusText}`);
@@ -63,6 +63,7 @@ export default function QueuePage() {
     setError(null);
 
     try {
+      // const response = await fetch(`http://localhost:10000/results/${jobId}`);
       const response = await fetch(`https://api.crackvault.work/results/${jobId}`);
       if (!response.ok) throw new Error(`Failed to download: ${response.statusText}`);
       const blob = await response.blob();
@@ -101,6 +102,7 @@ export default function QueuePage() {
 
     setLoading(true);
     try {
+      // const response = await fetch(`http://localhost:10000/delete/${jobId}`, { method: "POST" }); 
       const response = await fetch(`https://api.crackvault.work/delete/${jobId}`, { method: "POST" }); 
       // If you changed backend to DELETE:
       // const response = await fetch(`/delete/${jobId}`, { method: "DELETE" });
@@ -124,21 +126,21 @@ export default function QueuePage() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-pink-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 p-8">
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl p-8">
-        <h1 className="text-3xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-pink-600 mb-8">
+        <h1 className="text-3xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-8">
           Job Queue
         </h1>
 
         {error && (
-          <div className="bg-red-100 border border-red-400 text-red-800 p-4 rounded-lg mb-6">
+          <div className="bg-purple-100 border border-purple-400 text-purple-800 p-4 rounded-lg mb-6">
             {error}
           </div>
         )}
 
         {loading && jobs.length === 0 ? (
           <div className="flex justify-center items-center py-10">
-            <Loader2 className="w-8 h-8 animate-spin text-red-600" />
+            <Loader2 className="w-8 h-8 animate-spin text-purple-600" />
           </div>
         ) : jobs.length === 0 ? (
           <p className="text-center text-gray-500">No jobs currently in the queue.</p>
@@ -156,7 +158,7 @@ export default function QueuePage() {
                     Processed {job.processed_count}/{job.files_count}
                   </p>
                   {job.rejected_files.length > 0 && (
-                    <p className="text-xs text-red-500 mt-1">
+                    <p className="text-xs text-purple-500 mt-1">
                       Warning: {job.rejected_files.join(", ")}
                     </p>
                   )}
@@ -164,7 +166,7 @@ export default function QueuePage() {
 
                 <div className="flex flex-shrink-0 items-center gap-2 ml-auto md:ml-0">
                   {job.status === "In Progress" && (
-                    <div className="flex items-center gap-2 text-red-600">
+                    <div className="flex items-center gap-2 text-purple-600">
                       <Loader2 className="w-5 h-5 animate-spin" />
                       <span>Processing</span>
                     </div>
@@ -188,7 +190,7 @@ export default function QueuePage() {
                   {job.status !== "In Progress" && (
                   <button
                     onClick={() => handleDeleteJob(job.id)}
-                    className="flex flex-shrink-0 items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition disabled:opacity-50"
+                    className="flex flex-shrink-0 items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition disabled:opacity-50"
                     disabled={loading}
                   >
                     <Trash className="w-5 h-5" />
