@@ -5,11 +5,7 @@ import { FloatingDock } from "@/components/ui/FloatingDock";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
-  IconBrandX,
-  IconExchange,
-  IconHome,
-  IconNewSection,
-  IconTerminal2,
+  IconBrandInstagram,
 } from "@tabler/icons-react";
 
 export default function FloatingDockAce() {
@@ -17,25 +13,25 @@ export default function FloatingDockAce() {
   
   const links = [
     {
-      title: "LinkedIn",
-      icon: (
-        <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
-      title: "Twitter",
-      icon: (
-        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
       title: "GitHub",
       icon: (
         <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "https://github.com/SKB336",
+    },
+    {
+      title: "LinkedIn",
+      icon: (
+        <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "https://www.linkedin.com/in/shakeeb-ahmed-9a9366285/",
+    },
+    {
+      title: "Instagram",
+      icon: (
+        <IconBrandInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "https://www.instagram.com/shakeeb.fr?igsh=eG9yNDlreWczMzh4",
     },
   ];
 

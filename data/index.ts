@@ -8,7 +8,7 @@ export const navItems = [
 export const gridItems = [
     {
       id: 1,
-      title: "I prioritize client collaboration, fostering open communication ",
+      title: "I maintain tight coordination to prevent rework and surprises.",
       description: "",
       className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
       imgClassName: "w-full h-full",
@@ -48,7 +48,7 @@ export const gridItems = [
     },
     {
       id: 5,
-      title: "Currently building a JS Animation library",
+      title: "Currently building a FastAPI-based microservice",
       description: "The Inside Scoop",
       className: "md:col-span-3 md:row-span-2",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -95,6 +95,14 @@ export const projects = [
     },
     {
       id: 4,
+      title: "Homelab + Microservices",
+      des: "Architected a secure, containerized ecosystem using Docker and Caddy. Developed a custom FastAPI backend to handle AI image enhancement and resource compression.",
+      img: "/homepage.png",
+      iconLists: ["/dock.svg", "/ubuntu.svg", "/caddy.svg", "/python.svg"],
+      link: "https://homepage.crackvault.work",
+    },
+    {
+      id: 5,
       title: "2D Pixel RPG Game",
       des: "Built a classic 2D RPG using Godot Engine. Features vector-based movement, combat, and quest mechanics.",
       img: "/pc6.jpg",
@@ -144,7 +152,7 @@ export const testimonials = [
 export const companies = [
     {
       id: 5,
-      name: "docker.",
+      name: "Docker.",
       img: "/dock.svg",
       nameImg: "/dockerName.svg",
     },
@@ -162,13 +170,19 @@ export const companies = [
     },
     {
       id: 2,
-      name: "appwrite",
+      name: "Appwrite",
       img: "/app.svg",
       nameImg: "/appName.svg",
     },
+    // {
+    //   id: 5,
+    //   name: "Odoo.",
+    //   // img: "/dock.svg",
+    //   both: "/odoo.svg",
+    // },
     {
       id: 3,
-      name: "HOSTINGER",
+      name: "Expo",
       both: "/expoBoth.svg",
     },
 ];
@@ -183,25 +197,25 @@ export const workExperience = [
     },
     {
       id: 2,
-      title: "Software Engineer | Consultant",
+      title: "Odoo Developer | Consultant",
       desc: "Designed and developed a scalable, SaaS-based Point of Sale (POS) system tailored for the Saudi Arabian market using Odoo",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/exp2.svg",
     },
-    // {
-    //   id: 3,
-    //   title: "Freelance Dev Projects",
-    //   desc: "Led few projects, including mobile app development, tailored modules, and more.",
-    //   className: "md:col-span-2", // change to md:col-span-2
-    //   thumbnail: "/exp3.svg",
-    // },
-    // {
-    //   id: 4,
-    //   title: "Lead Frontend Developer",
-    //   desc: "Developed and maintained user-facing features using modern frontend technologies.",
-    //   className: "md:col-span-2",
-    //   thumbnail: "/exp4.svg",
-    // },
+    {
+      id: 3,
+      title: "Senior Technical Consultant",
+      desc: "Led end-to-end delivery of complex projects, including full-featured eCommerce sites, CRM workflows, API integrations, and specialized Odoo modules.",
+      className: "md:col-span-2", // change to md:col-span-2
+      thumbnail: "/exp3.svg",
+    },
+    {
+      id: 4,
+      title: "Freelance Developer",
+      desc: "Developed web and mobile solutions for clients, delivering scalable front-end, back-end, and Odoo-integrated systems.",
+      className: "md:col-span-2",
+      thumbnail: "/exp4.svg",
+    },
 ];
   
 export const socialMedia = [
@@ -213,12 +227,12 @@ export const socialMedia = [
     {
       id: 2,
       img: "/link.svg",
-      link: "https://twitter.com/SKB336",
+      link: "https://www.linkedin.com/in/shakeeb-ahmed-9a9366285/",
     },
     {
       id: 3,
       img: "/insta.svg",
-      link: "https://linkedin.com/in/shakeeb-ahmed-336",
+      link: "https://www.instagram.com/shakeeb.fr?igsh=eG9yNDlreWczMzh4",
     },
 ];
 
