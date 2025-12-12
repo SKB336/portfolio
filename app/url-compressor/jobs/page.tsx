@@ -21,7 +21,7 @@ const loadJSZip = () => {
 interface JobItem {
   id: string;
   status: string;
-  time: string;
+  time: number;
   duration?: string;
   files_count: number;
   processed_count: number;
@@ -154,6 +154,9 @@ export default function QueuePage() {
                 <div>
                   <p className="font-semibold text-gray-800">Status: {job.status}</p>
                   <p className="break-all md:whitespace-nowrap font-sm text-gray-800">Job ID: {job.id}</p>
+                  <p className="text-sm text-gray-600">
+                    Time: {new Date(job.time * 1000).toLocaleString()}
+                  </p>
                   <p className="text-sm text-gray-600">
                     Processed {job.processed_count}/{job.files_count}
                   </p>
