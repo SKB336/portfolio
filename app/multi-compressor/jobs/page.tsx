@@ -39,7 +39,7 @@ export default function QueuePage() {
     try {
       const sessionId = localStorage.getItem("sessionId");
       // const response = await fetch("http://localhost:10000/compress-jobs", {
-      const response = await fetch("https://api.crackvault.work/url-image-compress-jobs", {
+      const response = await fetch("https://api.crackvault.work/image-compress-jobs", {
         credentials: "include",
       });
       if (!response.ok) throw new Error(`Failed to fetch jobs: ${response.statusText}`);
