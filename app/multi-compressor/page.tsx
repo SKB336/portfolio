@@ -261,7 +261,7 @@ export default function ImageCompressor() {
             <div className="flex flex-col gap-2">
               <span className="text-sm font-semibold text-gray-700">Compression size</span>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2">
-                {[1920, 1280, 720, 480].map((size) => (
+                {[3840, 2560, 1920, 1280, 720, 480].map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedMaxWidth(size)}
