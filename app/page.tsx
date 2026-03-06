@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import FixedElements from "@/components/FixedElements";
 // import FloatingDock from "@/components/FloatingDockAI";
 import FloatingDockAce from "@/components/FloatingDock";
+import FloatingResume from "@/components/FloatingResume";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       </div>
 
       <FloatingDockAce />
+      <FloatingResume />
     </main>
   );
 }
