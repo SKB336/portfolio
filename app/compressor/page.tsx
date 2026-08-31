@@ -2,6 +2,7 @@
 
 import { useState, ChangeEvent } from 'react';
 import { Upload, Download, Loader2, CheckCircle, XCircle } from 'lucide-react';
+import { getApiUrl } from '@/config/api';
 
 export default function ImageCompressor() {
   const [file, setFile] = useState<File | null>(null);
@@ -40,7 +41,7 @@ export default function ImageCompressor() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('https://api.crackvault.work/compress', {
+      const response = await fetch(getApiUrl('/compress'), {
         method: 'POST',
         body: formData,
       });

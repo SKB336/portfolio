@@ -2,6 +2,7 @@
 
 import { useState, ChangeEvent, useEffect } from 'react';
 import { Link, Loader2, CheckCircle, XCircle, Download, Plus, X, ExternalLink } from 'lucide-react';
+import { getApiUrl } from '@/config/api';
 
 // Function to dynamically load the JSZip script
 // const loadJSZip = () => {
@@ -30,7 +31,7 @@ export default function ImageCompressor() {
   useEffect(() => {
       async function createSession() {
         try {
-          const res = await fetch("https://api.crackvault.work/set-session", {
+          const res = await fetch(getApiUrl("/set-session"), {
           // const res = await fetch("http://localhost:10000/set-session", {
             method: "POST",
             credentials: "include", // This sends & receives cookies
@@ -88,8 +89,7 @@ export default function ImageCompressor() {
       validUrls.forEach(url => formData.append('urls', url));
       formData.append('max_size', selectedMaxWidth.toString());
 
-      const response = await fetch('https://api.crackvault.work/compress-zip-url', {
-      // const response = await fetch('http://localhost:10000/compress-zip-url', {
+      const response = await fetch(getApiUrl('/compress-zip-url'), {
         method: 'POST',
         body: formData,
         credentials: "include",

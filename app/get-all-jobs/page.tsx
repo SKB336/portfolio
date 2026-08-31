@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Loader2, Download, Trash } from "lucide-react";
+import { getApiUrl } from "@/config/api";
 
 // Function to dynamically load the JSZip library
 const loadJSZip = () => {
@@ -36,7 +37,7 @@ export default function QueuePage() {
   const fetchJobs = async () => {
     setError(null);
     try {
-      const response = await fetch("https://api.crackvault.work/get-all-jobs", {
+      const response = await fetch(getApiUrl("/get-all-jobs"), {
         credentials: "include",
       });
       if (!response.ok) throw new Error(`Failed to fetch jobs: ${response.statusText}`);
@@ -59,7 +60,7 @@ export default function QueuePage() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`https://api.crackvault.work/results/${jobId}`);
+      const response = await fetch(getApiUrl(`/results/${jobId}`));
       if (!response.ok) throw new Error(`Failed to download: ${response.statusText}`);
       const blob = await response.blob();
       await loadJSZip();
@@ -95,7 +96,7 @@ export default function QueuePage() {
     if (!confirm(`Are you sure you want to delete job ${jobId}?`)) return;
     setLoading(true);
     try {
-      const response = await fetch(`https://api.crackvault.work/delete/${jobId}`, { method: "POST" });
+      const response = await fetch(getApiUrl(`/delete/${jobId}`), { method: "POST" });
       if (!response.ok) {
         const error = await response.json();
         alert(`Failed to delete job: ${error.detail}`);

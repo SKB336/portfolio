@@ -2,6 +2,7 @@
 
 import { useState, ChangeEvent } from 'react';
 import { Link, Loader2, CheckCircle, XCircle, Download, Plus, X } from 'lucide-react';
+import { getApiUrl } from '@/config/api';
 
 // Function to dynamically load the JSZip script
 const loadJSZip = () => {
@@ -65,7 +66,7 @@ export default function ImageCompressor() {
       validUrls.forEach(url => formData.append('urls', url));
       formData.append('max_size', selectedMaxWidth.toString());
 
-      const response = await fetch('https://api.crackvault.work/compress-zip-url', {
+      const response = await fetch(getApiUrl('/compress-zip-url'), {
         method: 'POST',
         body: formData,
       });

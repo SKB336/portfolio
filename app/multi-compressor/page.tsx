@@ -2,6 +2,7 @@
 
 import { useState, ChangeEvent, useEffect } from 'react';
 import { Upload, Loader2, CheckCircle, XCircle, Download, ExternalLink } from 'lucide-react';
+import { getApiUrl } from '@/config/api';
 
 // Define a type for a file with its preview URL
 interface ImageFile extends globalThis.File {
@@ -38,7 +39,7 @@ export default function ImageCompressor() {
   useEffect(() => {
     async function createSession() {
       try {
-        const res = await fetch("https://api.crackvault.work/set-session", {
+        const res = await fetch(getApiUrl("/set-session"), {
         // const res = await fetch("http://localhost:10000/set-session", {
           method: "POST",
           credentials: "include", // This sends & receives cookies
@@ -106,8 +107,7 @@ export default function ImageCompressor() {
     formData.append('max_size', String(selectedMaxWidth));
 
     try {
-      // const response = await fetch('https://api.crackvault.work/compress-zip', {
-      const response = await fetch('https://api.crackvault.work/compress-zip', {
+      const response = await fetch(getApiUrl('/compress-zip'), {
         method: 'POST',
         body: formData,
         credentials: "include",

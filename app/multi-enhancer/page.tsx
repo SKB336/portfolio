@@ -2,6 +2,7 @@
 
 import { useState, ChangeEvent, useEffect } from 'react';
 import { Upload, Loader2, CheckCircle, XCircle, ExternalLink } from 'lucide-react';
+import { getApiUrl } from '@/config/api';
 
 interface ImageFile extends globalThis.File {
   preview: string;
@@ -18,7 +19,7 @@ export default function ImageEnhancer() {
   useEffect(() => {
     async function createSession() {
       try {
-        const res = await fetch("https://api.crackvault.work/set-session", {
+        const res = await fetch(getApiUrl("/set-session"), {
           method: "POST",
           credentials: "include", // This sends & receives cookies
         });
@@ -84,7 +85,7 @@ export default function ImageEnhancer() {
     formData.append('model_type', String(selectedMaxWidth));
 
     try {
-      const response = await fetch('https://api.crackvault.work/enhance-zip-async', {
+      const response = await fetch(getApiUrl('/enhance-zip-async'), {
         method: 'POST',
         body: formData,
         credentials: 'include',
